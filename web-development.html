@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Portfolio - Aaditya</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css?v=3.4">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Emergency text visibility fixes for light theme - SOLID BLACK */
+        [data-theme="light"] .section-title {
+            color: #000000 !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="light"] .hero-stats .stat-label {
+            color: #000000 !important;
+            font-weight: 600 !important;
+        }
+        [data-theme="light"] .placeholder-message h3 {
+            color: #000000 !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="light"] .placeholder-message p {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        [data-theme="light"] .tech-card h3 {
+            color: #000000 !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="light"] .tech-card p {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        [data-theme="light"] .service-card h3 {
+            color: #000000 !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="light"] .service-card p {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        [data-theme="light"] .service-features li {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        /* Enhanced Web Development Hero Design */
+        .hero-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            font-size: 3.5rem !important;
+            font-weight: 900 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            margin: 0 0 1rem 0 !important;
+            text-align: center !important;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.5) !important;
+            animation: glow 2s ease-in-out infinite alternate !important;
+        }
+        .hero-subtitle {
+            color: #e2e8f0 !important;
+            font-size: 1.3rem !important;
+            font-weight: 400 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 0.9 !important;
+            text-align: center !important;
+            margin-bottom: 2rem !important;
+        }
+        [data-theme="light"] .hero-title {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            font-size: 3.5rem !important;
+            font-weight: 900 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            margin: 0 0 1rem 0 !important;
+            text-align: center !important;
+            text-shadow: 0 0 30px rgba(30, 64, 175, 0.5) !important;
+            animation: glow 2s ease-in-out infinite alternate !important;
+        }
+        [data-theme="light"] .hero-subtitle {
+            color: #475569 !important;
+            font-size: 1.3rem !important;
+            font-weight: 400 !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 0.9 !important;
+            text-align: center !important;
+            margin-bottom: 2rem !important;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(102, 126, 234, 0.5), 0 0 30px rgba(102, 126, 234, 0.3), 0 0 40px rgba(102, 126, 234, 0.2);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(102, 126, 234, 0.8), 0 0 40px rgba(102, 126, 234, 0.6), 0 0 50px rgba(102, 126, 234, 0.4);
+            }
+        }
+        /* Additional text elements for better visibility */
+        [data-theme="light"] .contact-content h2 {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="light"] .contact-content p {
+            color: #ffffff !important;
+            font-weight: 500 !important;
+        }
+        [data-theme="light"] .footer-logo h3 {
+            color: #000000 !important;
+            font-weight: 700 !important;
+        }
+        [data-theme="light"] .footer-logo p {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        [data-theme="light"] .footer-links a {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        [data-theme="light"] .footer-bottom p {
+            color: #000000 !important;
+            font-weight: 500 !important;
+        }
+        
+        /* WhatsApp Section Styles - IMPORTANT OVERRIDES */
+        .whatsapp-section {
+            padding: 80px 0 !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            text-align: center !important;
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        .whatsapp-content {
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        .whatsapp-content h2 {
+            color: #ffffff !important;
+            font-size: 2.5rem !important;
+            margin-bottom: 1rem !important;
+            font-weight: 700 !important;
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        .whatsapp-content p {
+            color: #ffffff !important;
+            font-size: 1.2rem !important;
+            margin-bottom: 2rem !important;
+            opacity: 0.9 !important;
+            display: block !important;
+            visibility: visible !important;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            background: #25D366 !important;
+            color: #ffffff !important;
+            padding: 16px 32px !important;
+            border-radius: 50px !important;
+            text-decoration: none !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20ba5a !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4) !important;
+        }
+        
+        .whatsapp-btn i {
+            font-size: 1.3rem !important;
+        }
+        
+        /* Logo and Refresh Button Styling */
+        .logo {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+        
+        .refresh-btn {
+            width: 40px !important;
+            height: 40px !important;
+            border: none !important;
+            border-radius: 8px !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            color: #ffffff !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+        }
+        
+        .refresh-btn:hover {
+            transform: scale(1.1) !important;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+        }
+        
+        .refresh-btn:active {
+            transform: scale(0.95) !important;
+        }
+        
+        .refresh-btn i {
+            font-size: 1.2rem !important;
+            transition: transform 0.3s ease !important;
+        }
+        
+        .refresh-btn:hover i {
+            transform: rotate(180deg) !important;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <button class="refresh-btn" onclick="location.reload()" title="Refresh Page">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+                <span class="logo-text">Aaditya</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#projects" class="nav-link">Data Projects</a>
+                <a href="web-development.html" class="nav-link active">Web Development</a>
+            </nav>
+            <div class="theme-switcher">
+                <button class="theme-btn active" data-theme="dark" title="Dark Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-btn" data-theme="light" title="Light Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="web-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Here are some of the Web development projects</h1>
+                <p class="hero-subtitle">Full-stack web solutions with modern technologies and responsive design</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Live Websites</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Responsive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="tech-section">
+        <div class="container">
+            <h2 class="section-title">Technologies I Work With</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>React.js</h3>
+                    <p>Modern UI development with component-based architecture</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p>Server-side JavaScript for scalable backend solutions</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Backend development with Django and Flask frameworks</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <p>Semantic markup and modern web standards</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3</h3>
+                    <p>Advanced styling with animations and responsive design</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive web applications and dynamic functionality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Websites Section -->
+    <section class="websites-section">
+        <div class="container">
+            <h2 class="section-title">Live Websites</h2>
+                         <div class="websites-grid">
+                 <div class="website-showcase">
+                     <div class="website-image">
+                         <img src="dashboard-images/resumescreenerai.com.png" alt="Resume Screener AI" loading="lazy">
+                         <div class="website-overlay">
+                             <a href="https://resumescreenerai.com/" target="_blank" class="visit-btn">
+                                 <i class="fas fa-external-link-alt"></i>
+                                 Visit Website
+                             </a>
+                         </div>
+                     </div>
+                     <div class="website-content">
+                         <h3>Resume Screener AI</h3>
+                         <p>An intelligent web application that helps users optimize their resumes for job applications. The platform uses AI to analyze resumes and highlight keywords that recruiters and Applicant Tracking Systems (ATS) look for, increasing interview chances.</p>
+                         <div class="website-tech">
+                             <span class="tech-tag">HTML5</span>
+                             <span class="tech-tag">CSS3</span>
+                             <span class="tech-tag">JavaScript</span>
+                             <span class="tech-tag">AI Integration</span>
+                             <span class="tech-tag">Responsive Design</span>
+                         </div>
+                         <div class="website-features">
+                             <div class="feature">
+                                 <i class="fas fa-upload"></i>
+                                 <span>Drag & Drop Resume Upload</span>
+                             </div>
+                             <div class="feature">
+                                 <i class="fas fa-search"></i>
+                                 <span>ATS Keyword Analysis</span>
+                             </div>
+                             <div class="feature">
+                                 <i class="fas fa-chart-line"></i>
+                                 <span>Optimization Recommendations</span>
+                             </div>
+                             <div class="feature">
+                                 <i class="fas fa-users"></i>
+                                 <span>Trusted by Top Companies</span>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 
+                 <!-- Kiwi Corner Superette Website -->
+                 <div class="website-showcase">
+                     <div class="website-image">
+                         <img src="dashboard-images/kiwicornersuperette.store.png" alt="Kiwi Corner Superette" loading="lazy">
+                         <div class="website-overlay">
+                             <a href="https://kiwicornersuperette.store/" target="_blank" class="visit-btn">
+                                 <i class="fas fa-external-link-alt"></i>
+                                 Visit Website
+                             </a>
+                         </div>
+                     </div>
+                     <div class="website-content">
+                         <h3>Kiwi Corner Superette</h3>
+                         <p>A comprehensive e-commerce platform for a local convenience store in Hamilton, New Zealand. Features product categorization, online ordering, and a user-friendly interface for customers to browse dairy products, snacks, ice cream, and household items.</p>
+                         <div class="website-tech">
+                             <span class="tech-tag">HTML5</span>
+                             <span class="tech-tag">CSS3</span>
+                             <span class="tech-tag">JavaScript</span>
+                             <span class="tech-tag">E-commerce</span>
+                             <span class="tech-tag">Responsive Design</span>
+                         </div>
+                         <div class="website-features">
+                             <div class="feature">
+                                 <i class="fas fa-shopping-cart"></i>
+                                 <span>Product Catalog Management</span>
+                             </div>
+                             <div class="feature">
+                                 <i class="fas fa-tags"></i>
+                                 <span>Category Organization</span>
+                             </div>
+                             <div class="feature">
+                                 <i class="fas fa-mobile-alt"></i>
+                                 <span>Mobile-Responsive Design</span>
+                             </div>
+                             <div class="feature">
+                                 <i class="fas fa-map-marker-alt"></i>
+                                 <span>Local Business Focus</span>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Freelance Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Website Development</h3>
+                    <p>Tailored websites built from scratch to meet your specific business requirements and brand identity.</p>
+                    <ul class="service-features">
+                        <li>Responsive Design</li>
+                        <li>Custom Functionality</li>
+                        <li>SEO Optimization</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce Solutions</h3>
+                    <p>Complete online store development with payment processing, inventory management, and order tracking.</p>
+                    <ul class="service-features">
+                        <li>Payment Gateway Integration</li>
+                        <li>Product Management</li>
+                        <li>Order Processing</li>
+                        <li>Customer Accounts</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Websites that look and function perfectly on all devices - desktop, tablet, and mobile.</p>
+                    <ul class="service-features">
+                        <li>Mobile-First Approach</li>
+                        <li>Cross-Browser Compatibility</li>
+                        <li>Touch-Friendly Interface</li>
+                        <li>Fast Loading Times</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Contact Section -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <div class="whatsapp-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss your web development needs and create something amazing together.</p>
+                <a href="https://wa.me/640224763976?text=Hi%20Aaditya,%20I%20would%20like%20to%20discuss%20a%20web%20development%20project%20with%20you." target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Contact on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Aaditya</h3>
+                    <p>Data Scientist & Web Developer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#experience">Experience</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="web-development.html">Web Development</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/aaditya-karande-a12a48260/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/aadi9082" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:aadityakarande03@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aaditya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
