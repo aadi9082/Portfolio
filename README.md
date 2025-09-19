@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Data Science Portfolio
 
 A modern, responsive portfolio website showcasing data science projects and experience.
@@ -57,3 +58,7 @@ portfolio/
 - Vanilla JavaScript
 - Font Awesome icons
 - Google Fonts (Inter)
+=======
+# Portfolio
+I have created a portfolio showcasing my professional experience and projects.
+>>>>>>> 2229424aac15d0e11d72aa9b6b290488c7614bca
